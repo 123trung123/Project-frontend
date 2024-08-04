@@ -1,0 +1,84 @@
+.dg.card {
+  background-color: #f1f2f7;
+  transition: 0.5s;
+  overflow: hidden;
+  position: relative;
+}
+.dg.card:hover {
+  transform: translateY(-3px);
+  color: #dd3431;
+}
+.custom-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+.btn-chi-tiet {
+  background: #fff;
+  font-family: "Orbitron", sans-serif;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transform: skew(-21deg);
+  text-decoration: none;
+  color: #333;
+}
+.btn-chi-tiet:hover {
+  color: white;
+}
+.btn-chi-tiet span {
+  display: inline-block;
+  transform: skew(21deg);
+  position: relative;
+  color: #fff;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.btn-chi-tiet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.btn-chi-tiet:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.Title {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  color: #333;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  .innerTitle {
+    color: rgb(255, 0, 0);
+  }
+}
+.image-container {
+  width: 100%;
+  height: 150px;
+  z-index: 10;
+}
+.image {
+  object-fit: cover; 
+  position: absolute;
+  height: 75%;
+  bottom: 0;
+  right: 0;
+}

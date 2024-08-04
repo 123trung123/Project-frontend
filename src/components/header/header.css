@@ -1,0 +1,44 @@
+/* .LOGO {
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+  width: 30px;
+  height:30px;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+.bg {
+  background-color: 0;
+}
+.Shopping {
+  list-style: none;
+  color: #2bd2ff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.Navnav {
+  font-size: 20px;
+  font-weight: 500;
+  height: 60px;
+  text-transform: capitalize;
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);  
+}
+.brand {
+  font-size: 30px !important;
+  text-transform: uppercase;
+} */

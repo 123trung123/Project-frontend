@@ -1,0 +1,19 @@
+.col {
+  text-align: center;
+}
+h2:hover {
+  color: var(--blue);
+}
+p:hover {
+  color: var(--blue);
+}
+.Bg {
+  background-color: #545559;
+  background-image: linear-gradient(
+    311deg,
+    #545559 0%,
+    #5d7474 46%,
+    #1b1919 100%
+  );
+  color: white;
+}

@@ -1,0 +1,9 @@
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  width: 100px;
+  height: 100px;
+}
+.carousel-item {
+  margin: 0 10px;
+}
