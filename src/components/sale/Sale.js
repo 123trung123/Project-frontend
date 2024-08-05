@@ -20,16 +20,16 @@ export default function Sale() {
           <Grid container spacing={4}>
             <Grid item xs={12} md={5} data-aos="fade-right" style={{margin:"auto 0"}}>
               <Typography variant="h5" className="special-price-title">
-                Get Special Price
+                Giá đặc biệt
               </Typography>
               <Typography variant="h2" className="discount">
-                Up to 50% Off
+              Giảm tới 50%
               </Typography>
               <Typography variant="body1" className="tagline">
-                Trusted by pros. Made for winners.
+                Tin tưởng bởi nhiều người.
               </Typography>
               <Typography variant="body2" className="time-running-out">
-                This time running out
+                Nhanh tay mua.
               </Typography>
               <div className="countdown">
                 <div className="countdown-item">

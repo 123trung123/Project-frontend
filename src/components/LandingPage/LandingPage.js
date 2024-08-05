@@ -110,7 +110,7 @@ export default function LandingPage() {
             </Typography>
             <Button
               variant="contained"
-              sx={{ backgroundColor: "#ff5722", color: "#ffffff" }}
+              sx={{ backgroundColor: "#dd3431", color: "#ffffff" }}
             >
               <Link
                 to="/products"

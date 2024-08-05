@@ -12,7 +12,7 @@ export default function ContactUs() {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          We'd Love to Hear From You!
+          Chúng tôi muốn nghe ý kiến của bạn
         </Typography>
         <Typography
           variant="body1"
@@ -20,8 +20,7 @@ export default function ContactUs() {
           data-aos="fade-up"
           data-aos-duration="1500"
         >
-          Have any questions or feedback? Feel free to reach out to us, and
-          we'll get back to you as soon as possible.
+          Có câu hỏi gì, hãy liên hệ chúng tôi. Chúng tôi sẽ trả lời nhanh nhất có thể
         </Typography>
         <Link to="/contact" style={{ textDecoration: "none" }}>
           <Button
@@ -37,7 +36,7 @@ export default function ContactUs() {
             data-aos="fade-up"
             data-aos-duration="2000"
           >
-            Contact Us
+            Liên Hệ
           </Button>
         </Link>
       </Container>

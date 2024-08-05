@@ -5,7 +5,7 @@ import logo from '../assets/l.png';
 export default function Footer() {
   return (
     <Box sx={{ bgcolor: '#F3F4F6', color: 'black', py: 4 }}>
-      <Container maxWidth="lg">
+      <Container style={{ maxWidth: '1500px' }}>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={4}>
             <Typography variant="h6" gutterBottom>{/* Giới Thiệu */}<img src={logo} alt="Logo" width="200" height="50" /></Typography>
@@ -29,7 +29,7 @@ export default function Footer() {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <Typography variant="h6" gutterBottom>
-              Contact
+              Liên Hệ
             </Typography>
             <Typography variant="body2">Điện thoại: 000 000 0000</Typography>
             <Typography variant="body2">Email: info@ctsvn.vn</Typography>

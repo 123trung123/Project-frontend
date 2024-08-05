@@ -1,9 +1,19 @@
 import React from "react";
-import { Button, Card, CardBody, CardTitle, CardText, Container, Row, Col } from "reactstrap";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardTitle,
+  CardText,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFromCart } from "../../redux/cartSlice";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -21,7 +31,7 @@ export default function Cart() {
         <Row>
           {cart.length === 0 ? (
             <Col>
-              <h4 className="text-center">Your cart is empty</h4>
+              <h4 className="text-center"> Gỉo hàng của bạn trống </h4>
             </Col>
           ) : (
             cart.map((item, index) => (
@@ -29,12 +39,16 @@ export default function Cart() {
                 <Card>
                   <CardBody>
                     <CardTitle tag="h5">{item.name}</CardTitle>
-                    <CardText>Quantity: {item.quantity}</CardText>
+                    <img
+                      src={item.picture}
+                      style={{ width: 200, height: 200 }}
+                    ></img>
+                    <CardText>So luong: {item.quantity}</CardText>
                     <Button
                       color="danger"
                       onClick={() => handleDelete(item.id)}
                     >
-                      Remove
+                      Xoa
                     </Button>
                     {/* <td><Button onClick={()=>updateById(item.id,0)}>-</Button><span>{item.quantity}</span>
                     <Button onClick={()=>updateById(item.id,1)}>+</Button></td> */}
@@ -44,9 +58,13 @@ export default function Cart() {
             ))
           )}
         </Row>
+        <div className="text-center my-4">
+          <Link to="/payment" className="btn btn-primary">
+            Thanh Toan
+          </Link>
+        </div>
       </Container>
       <Footer />
     </>
   );
 }
-

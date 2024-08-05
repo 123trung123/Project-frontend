@@ -8,6 +8,8 @@ import {
   CardContent,
   CardMedia,
 } from "@mui/material";
+import img1 from "../assets/iconfe.png"
+import img2 from "../assets/iconma.png"
 export default function Review() {
   return (
     <Box sx={{ py: 8, backgroundColor: "#f9f9f9" }}>
@@ -18,7 +20,7 @@ export default function Review() {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          Customer Reviews
+          Đánh Giá
         </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4} data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
@@ -33,7 +35,7 @@ export default function Review() {
             >
               <CardMedia
                 component="img"
-                image="/path/to/alice.jpg"
+                image={img1}
                 alt="Alice Johnson"
                 sx={{ width: 100, height: 100, borderRadius: "50%", mt: 2 }}
               />
@@ -61,7 +63,7 @@ export default function Review() {
             >
               <CardMedia
                 component="img"
-                image="/path/to/bob.jpg"
+                image={img2}
                 alt="Bob Smith"
                 sx={{ width: 100, height: 100, borderRadius: "50%", mt: 2 }}
               />
@@ -89,7 +91,7 @@ export default function Review() {
             >
               <CardMedia
                 component="img"
-                image="/path/to/charlie.jpg"
+                image={img2}
                 alt="Charlie Brown"
                 sx={{ width: 100, height: 100, borderRadius: "50%", mt: 2 }}
               />
@@ -100,7 +102,7 @@ export default function Review() {
                   back!"
                 </Typography>
                 <Box sx={{ mt: 2 }}>
-                  <Typography variant="body2">★★★☆☆</Typography>
+                  <Typography variant="body2">★★★★☆</Typography>
                 </Box>
               </CardContent>
             </Card>

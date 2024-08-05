@@ -45,11 +45,11 @@ export default function Contact() {
                 }}
               >
                 <Typography variant="h6" sx={{ mb: 2 }}>
-                  We’d love to hear from you!
+                  Hãy cho chúng tôi ý kiến của bạn
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 4 }}>
-                  Please fill out the form below and we’ll get back to you as
-                  soon as possible.
+                  Hãy điền thông tin vào form bên dưới và chúng tôi sẽ liên hệ
+                  với bạn sớm nhất có thể.
                 </Typography>
                 <form noValidate autoComplete="off" style={{ width: "100%" }}>
                   <TextField
@@ -80,17 +80,17 @@ export default function Contact() {
                     sx={{ mt: 2, backgroundColor: "#ff5722" }}
                     type="submit"
                   >
-                    Send Message
+                    Gửi Tin Nhắn
                   </Button>
                 </form>
               </Box>
             </Grid>
             <Grid item xs={12} md={6} data-aos="fade-left">
               <Typography variant="h6" className="contact-info-title">
-                Contact Information
+                Số liên hệ{" "}
               </Typography>
               <Typography variant="body1" className="contact-info">
-                <strong>Email:</strong> contact@company.com
+                <strong>Email:</strong> test@company.com
               </Typography>
               <Typography variant="body1" className="contact-info">
                 <strong>Phone:</strong> +123 456 7890
@@ -99,8 +99,8 @@ export default function Contact() {
                 <strong>Address:</strong> 123 Street, City, Country
               </Typography>
               <Typography variant="body2" className="contact-note">
-                We are here to answer any questions you may have. Reach out to
-                us and we'll respond as soon as we can.
+                Chúng tôi sẵn sàng trả lời các câu hỏi của bạn. Hãy liên hệ
+                chúng tôi và chúng tôi sẽ trả lời sớm nhất có thể.
               </Typography>
             </Grid>
           </Grid>

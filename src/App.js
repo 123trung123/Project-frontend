@@ -7,6 +7,7 @@ import Detail from "./components/product/Detail";
 import Cart from "./components/cart/Cart";
 import ProductPage from "./pages/productpage/ProductPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import PaymentPage from "./pages/PaymentPage/PaymentPage";
 export default function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/detail/:id" element={<Detail />} />
             <Route path="/cart/" element={<Cart />} />
             <Route path="/contact/" element={<ContactPage />} />
+            <Route path="/payment/" element={<PaymentPage />} />
           </Routes>
         </BrowserRouter>
     </div>
