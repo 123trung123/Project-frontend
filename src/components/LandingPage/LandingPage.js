@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./landingpage.css";
 import {
@@ -26,9 +26,26 @@ import Review from "../Review/Review";
 export default function LandingPage() {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.products);
-
+  const images = [
+    {
+      src: "path/to/your/image1.jpg",
+      label: "Image 1",
+      description: "Discover amazing products",
+    },
+    {
+      src: "path/to/your/image2.jpg",
+      label: "Image 2",
+      description: "Explore our latest collection",
+    },
+    {
+      src: "path/to/your/image3.jpg",
+      label: "Image 3",
+      description: "Find your perfect match",
+    },
+  ];
+  const [activeStep, setActiveStep] = useState(0);
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = images.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -44,82 +61,83 @@ export default function LandingPage() {
     <div className="lander">
       <Container maxWidth={false} className="holder">
         <div className="first">
-          <Box
-            sx={{
-              width: "100%",
-              height: "50%",
-              position: "relative",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              textAlign: "center",
-              padding: 2,
-            }}
+        <Box
+      sx={{
+        width: "100%",
+        height: "50%",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        textAlign: "center",
+        padding: 2,
+        backgroundColor: "#1a2038",
+      }}
+    >
+      <img
+        src={images[activeStep].src}
+        alt={images[activeStep].label}
+        style={{ width: "50%", height: "30%", objectFit: "cover" }}
+      />
+      <MobileStepper
+        variant="dots"
+        steps={maxSteps}
+        position="static"
+        activeStep={activeStep}
+        sx={{
+          maxWidth: 400,
+          flexGrow: 1,
+          color: "white",
+          backgroundColor: "#1a2038",
+        }}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
           >
-            <img
-              src={img1}
-              alt="Carousel"
-              style={{ width: "50%", height: "30%", objectFit: "cover" }}
-            />
-            <MobileStepper
-              variant="dots"
-              steps={3}
-              position="static"
-              activeStep={activeStep}
-              sx={{
-                maxWidth: 400,
-                flexGrow: 1,
-                color: "white",
-                background:"#1a2038",
-              }}
-              nextButton={
-                <Button
-                  size="small"
-                  onClick={handleNext}
-                  disabled={activeStep === 2}
-                >
-                  {theme.direction === "rtl" ? (
-                    <KeyboardArrowLeft />
-                  ) : (
-                    <KeyboardArrowRight />
-                  )}
-                </Button>
-              }
-              backButton={
-                <Button
-                  size="small"
-                  onClick={handleBack}
-                  disabled={activeStep === 0}
-                >
-                  {theme.direction === "rtl" ? (
-                    <KeyboardArrowRight />
-                  ) : (
-                    <KeyboardArrowLeft />
-                  )}
-                </Button>
-              }
-            />
-            <Typography variant="h1" sx={{ color: "#ffffff", mb: 2 }}>
-              
-            </Typography>
-            <Typography variant="body1" sx={{ color: "#ffffff", mb: 2 }}>
-              Khám phá những sản phẩm
-            </Typography>
-            <button
-            className="appbar"
-              variant="contained"
-              sx={{ backgroundColor: "#dd3431", color: "#ffffff" }}
-            >
-              <Link
-                to="/products"
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                Mua
-              </Link>
-            </button>
-          </Box>
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button
+            size="small"
+            onClick={handleBack}
+            disabled={activeStep === 0}
+          >
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+          </Button>
+        }
+      />
+      <Typography variant="h1" sx={{ color: "#ffffff", mb: 2 }}>
+        {images[activeStep].label}
+      </Typography>
+      <Typography variant="body1" sx={{ color: "#ffffff", mb: 2 }}>
+        {images[activeStep].description}
+      </Typography>
+      <Button
+        className="appbar"
+        variant="contained"
+        sx={{ backgroundColor: "#dd3431", color: "#ffffff" }}
+      >
+        <Link
+          to="/products"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          Mua
+        </Link>
+      </Button>
+    </Box>
         </div>
 
         <Container>
