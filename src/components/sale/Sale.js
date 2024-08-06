@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./sale.css";
-import {Box,Container,Grid,Typography,Card,CardContent,} from "@mui/material";
+import {Box,Container,Grid,Typography} from "@mui/material";
 import img1 from "../assets/Keyboard1.png"
 
 export default function Sale() {
@@ -16,7 +16,7 @@ export default function Sale() {
         <p className="Title1">Sa<span className="innerTitle">le</span></p>
       </Typography>
       <Box sx={{ py: 5 }}>
-        <Container style={{ maxWidth: "1500px" }}>
+        <Container>
           <Grid container spacing={4}>
             <Grid item xs={12} md={5} data-aos="fade-right" style={{margin:"auto 0"}}>
               <Typography variant="h5" className="special-price-title">
@@ -46,29 +46,10 @@ export default function Sale() {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={12} md={7} data-aos="fade-left">
-              <img src={img1} className="responsive-image" alt="Sale Image" />
+            <Grid item xs={12} md={7} className="pictureholder">
+              <img data-aos="fade-left" src={img1} className="responsive-image" alt="Sale" />
             </Grid>
           </Grid>
-          {/* <Grid container spacing={4} className="products-section">
-            <Grid item xs={12} sm={12} data-aos="zoom-in">
-              <Card>
-                <CardContent>
-                  <Typography variant="h6">
-                    PlayStation 5 DualSense Wireless Controller
-                  </Typography>
-                  <Typography variant="body2">
-                    Rated 3.75 out of 5 (5 reviews)
-                  </Typography>
-                  <Typography variant="body1">$51.70 – $935.37</Typography>
-                  <Typography variant="body2">
-                    Availability: In Stock
-                  </Typography>
-                  <Typography variant="body2">Free gift included</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid> */}
         </Container>
       </Box>
     </div>

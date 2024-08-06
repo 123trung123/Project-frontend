@@ -8,39 +8,14 @@ const initialState = {
 };
 
 const url = "https://66a07b747053166bcabb8c62.mockapi.io/Products"
-export const getList = createAsyncThunk("products/getList",async(page)=>{
+export const getList = createAsyncThunk("products/getList",async()=>{
     const res =  await axios.get(url)
     return res.data
 })
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {
-    // addProducts(state, action) {
-    //   const biggestID =
-    //     state.products.reduce((a, b) => Math.max(b.id, a), 0) + 1;
-    //   const newProduct = {
-    //     id: biggestID,
-    //     name: action.payload.name,
-    //   };
-    //   state.products.push(newProduct);
-    //   localStorage.setItem("products", JSON.stringify(state.products));
-    // },
-    // deleteProducts(state, action) {
-    //   state.products = state.products.filter(
-    //     (item) => item.id !== action.payload
-    //   );
-    //   localStorage.setItem("products", JSON.stringify(state.products));
-    // },
-    // editProduct(state, action) {
-    //   state.products = state.products.map((item) =>
-    //     item.id === action.payload.id
-    //       ? { ...item, name: action.payload.name }
-    //       : item
-    //   );
-    //   localStorage.setItem("products", JSON.stringify(state.products));
-    // },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getList.pending, (state) => {

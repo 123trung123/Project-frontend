@@ -1,38 +1,38 @@
-import React, { useContext } from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Col,
-} from "reactstrap";
+import React, { useEffect } from "react";
+import { Button, Card, CardBody, CardText, CardTitle, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
-export default function Product({ products }) {
-  const dispatch = useDispatch();
-  const handle_add = (id) => {
-    dispatch(addToCart(id));
-  };
-  return (
-    <Col lg={3} md={4} sm={6} xs={6} className="mb-2">
-      <Card>
-        <CardBody>
-          <CardTitle tag="h5"> {products.name}</CardTitle>
-          <CardText>
-            <Link to={`/detail/${products.id}`}>Chi tiết sản phẩm</Link>
-          </CardText>
-          <CardText>
-            <img src={`${products.picture}`}></img>
-          </CardText>
+import "./product.css";
+import Aos from "aos";
 
-          <Button
-            onClick={() => {
-              handle_add(products);
-            }}
-          >
+export default function Product({ products, onAddToCart }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    Aos.init();
+  }, []);
+  const handle_add = (x) => {
+    dispatch(addToCart(x));
+  };
+
+  return (
+    <Col lg={3} md={4} sm={6} xs={6} className="mb-2" data-aos={`${(products.id%2===0?"flip-left":"flip-right")}`}
+    data-aos-duration="1500"
+    // data-aos-delay={`${0 + products.id * 100}`}
+    >
+      <Card className="Card_custom">
+        <CardBody>
+          <CardTitle tag="h5">{products.name}</CardTitle>
+          <CardText>
+            <Link className="links" to={`/detail/${products.id}`}>Chi tiết sản phẩm</Link>
+          </CardText>
+          <CardText>
+            <div className="image-container"></div>
+            <div>
+              <img className="productpicture" src={`${products.picture}`} alt={products.name} />
+            </div>
+          </CardText>
+          <Button onClick={() => handle_add(products)}>
             Add to Cart
           </Button>
         </CardBody>

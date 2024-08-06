@@ -53,7 +53,6 @@ export default function LandingPage() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#1a2038",
               color: "white",
               textAlign: "center",
               padding: 2,
@@ -72,8 +71,8 @@ export default function LandingPage() {
               sx={{
                 maxWidth: 400,
                 flexGrow: 1,
-                backgroundColor: "#1a2038",
                 color: "white",
+                background:"#1a2038",
               }}
               nextButton={
                 <Button
@@ -103,12 +102,13 @@ export default function LandingPage() {
               }
             />
             <Typography variant="h1" sx={{ color: "#ffffff", mb: 2 }}>
-              Hello Test
+              
             </Typography>
             <Typography variant="body1" sx={{ color: "#ffffff", mb: 2 }}>
               Khám phá những sản phẩm
             </Typography>
-            <Button
+            <button
+            className="appbar"
               variant="contained"
               sx={{ backgroundColor: "#dd3431", color: "#ffffff" }}
             >
@@ -118,18 +118,18 @@ export default function LandingPage() {
               >
                 Mua
               </Link>
-            </Button>
+            </button>
           </Box>
         </div>
 
-        <Container style={{ maxWidth: "1500px" }}>
+        <Container>
           <Row className="py-5">
             <BestSeller products={products} />
           </Row>
         </Container>
         <Features />
         <Box sx={{ py: 8 }}>
-          <Container style={{ maxWidth: "1500px" }}>
+          <Container>
             <p className="Title">
               All <span className="innerTitle">Items</span>
             </p>

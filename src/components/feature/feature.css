@@ -19,7 +19,6 @@
     width: 50%; 
   }
 }
-
 .feature-card-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -34,6 +33,7 @@
   content: '-10%';
   position: absolute;
   border-radius: 5px;
+  font-size: 15px !important;
   top: 2%;
   left: 1%;
   width: 10%; 

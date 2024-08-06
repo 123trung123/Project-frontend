@@ -1,0 +1,77 @@
+.productpicture {
+  object-fit: contain;
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  bottom: 0;
+  right: 0;
+}
+.Card_custom {
+  transition: 0.3s;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  text-transform: capitalize;
+}
+.Card_custom:hover {
+  transform: translateY(-2%);
+  box-shadow: rgba(136, 165, 191, 0.8) 6px 2px 26px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 26px 0px;
+}
+.links{
+    text-decoration: none;
+    color: #333;
+}
+.btn {
+  --color: #ff0000 !important;
+  color: black !important   ;
+  --color2: rgb(255, 255, 255);
+  transition: 0.2s !important;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  text-transform: uppercase;
+  backdrop-filter: blur(5px);
+  background-color: transparent !important;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: 0.3s ease-out;
+  background-color: var(--color);
+}
+
+.btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+  color: var(--color2) !important;
+}
+
+.btn:active {
+  filter: brightness(0.7);
+  transform: scale(0.98);
+}
