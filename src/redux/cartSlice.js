@@ -25,8 +25,8 @@ const cartSlice = createSlice({
     },
     updateCartItem(state, action) {
       const { id, flag } = action.payload;
-      const existingItem = state.cart.find((item) => item.id === action.payload);
-
+      console.log(id, flag)
+      const existingItem = state.cart.find((item) => item.id === id);
       if (existingItem) {
         if (flag === 0 && existingItem.quantity > 1) {
           existingItem.quantity -= 1;

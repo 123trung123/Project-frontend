@@ -19,7 +19,7 @@ export default function CarouselProducts({ products }) {
   },[dispatch])
   return (
     <Row>
-      {products.slice(0, 16).map((item, index) => (
+      {products.slice(0, 12).map((item, index) => (
         <Col lg={3} md={3} sm={6} xs={6} className="mb-4" key={item.id}>
           <Card className="contain">
             <CardBody>

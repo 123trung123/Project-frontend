@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Container, Grid, Typography, TextField, Button } from "@mui/material";
 import { useSelector } from "react-redux";
 import "./payment.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Payment() {
   const cart = useSelector((state) => state.cart.cart);
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+    window.scrollTo(0,0)
+  }, []);
   return (
     <div className="payment-container">
       <Box sx={{ py: 8 }}>
         <Container>
-          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
+          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }} data-aos="fade-down"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="1500">
            Thông tin Giao Dịch
           </Typography>
           <Grid container spacing={4}>
@@ -27,6 +36,8 @@ export default function Payment() {
                   borderRadius: 1,
                   boxShadow: 2,
                 }}
+                data-aos="fade-up"
+                data-aos-duration="1000"
               >
                 <Typography variant="h6" sx={{ mb: 2 }}>
                   Giỏ Hàng
@@ -61,6 +72,8 @@ export default function Payment() {
             </Grid>
             <Grid item xs={12} md={6}>
               <Box
+                data-aos="fade-up"
+                data-aos-duration="2000"
                 sx={{
                   display: "flex",
                   flexDirection: "column",

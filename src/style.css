@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+}
 body {
   font-size: 16px;
   font-family: "Obitron", sans-serif;

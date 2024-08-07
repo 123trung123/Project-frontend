@@ -22,13 +22,14 @@ export default function Detail() {
   return (
     <div className="detail-container">
       <Row className="justify-content-center">
-        <Col md={3}>
+        <Col md={4}>
             <div className="thumbnail-container">
               <img className="thumbnail "src={pro.picture} alt="fake"></img>
             </div>
         </Col>
-        <Col md={6}>
+        <Col md={4}>
           {pro ? (
+            <>
             <div className="product-detail">
               <Typography variant="h4" component="div" className="product-name">
                 {pro.name}
@@ -40,34 +41,25 @@ export default function Detail() {
               <Typography variant="h5" component="div" className="product-price">
                 ${pro.price} <span className="original-price">${pro.originalPrice}</span>
               </Typography>
-              <Typography variant="body2" color="text.secondary" className="product-availability">
-                Availability: {pro.availability ? 'In Stock' : 'Out of Stock'}
+              <Typography variant="body2" color="text.secondary" className="product-category">
+                Category: {pro.category}
               </Typography>
-              <div className="countdown">
-                <Typography variant="body1" component="div">
-                  This time running out
-                </Typography>
-                <div className="timer">
-                  <div>
-                    <span className="time-value">158</span> Days
-                  </div>
-                  <div>
-                    <span className="time-value">10</span> Hrs
-                  </div>
-                  <div>
-                    <span className="time-value">15</span> Mins
-                  </div>
-                  <div>
-                    <span className="time-value">05</span> Secs
-                  </div>
-                </div>
-              </div>
+
               <CardActions>
                 <Button onClick={()=>handle_add(pro)} >
                   Add to Cart
                 </Button>
               </CardActions>
             </div>
+            <div className="product-detail">
+            <Typography variant="h5"  className="product-description">
+                Details:  
+              </Typography>
+            <Typography variant="body2" color="text.secondary" className="product-description">
+                {pro.descriptionLong}
+              </Typography>
+              </div>
+            </>
           ) : (
             <Typography variant="h6" color="text.secondary">
               Product not found
@@ -78,7 +70,10 @@ export default function Detail() {
       <Row className="justify-content-center">
         <Col md={8} className="text-center">
           <Link to="/">
-            <Button>Home</Button>
+            <Button className="m-3">Trang Chủ</Button>
+          </Link>
+          <Link to="/products" >
+            <Button className="m-3">Của Hàng</Button>
           </Link>
         </Col>
       </Row>

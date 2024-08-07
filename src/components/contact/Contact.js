@@ -14,6 +14,7 @@ import "./contact.css";
 export default function Contact() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
+    window.scrollTo(0,0)
   }, []);
 
   return (

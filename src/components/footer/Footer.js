@@ -32,6 +32,16 @@ export default function Footer() {
               </Link>
             </Typography>
             <Typography variant="body2">
+              <Link href="/cart" color="inherit" underline="none">
+                Giỏ Hàng
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="/payment" color="inherit" underline="none">
+                  Thanh Toán
+              </Link>
+            </Typography>
+            <Typography variant="body2">
               <Link href="/contact" color="inherit" underline="none">
                 Liên Hệ
               </Link>
