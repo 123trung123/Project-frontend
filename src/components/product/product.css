@@ -1,3 +1,11 @@
+.newfont{
+  font-size: 16px;
+  font-family: "Obitron", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -48,9 +56,10 @@
   box-shadow: rgba(136, 165, 191, 0.8) 6px 2px 26px 0px,
     rgba(255, 255, 255, 0.8) -6px -2px 26px 0px;
 }
-.links{
-    text-decoration: none;
+.btn-link{
+    text-decoration: none !important;
     color: #333;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 .btn {
   --color: #ff0000 !important;
@@ -103,4 +112,7 @@
 .btn:active {
   filter: brightness(0.7);
   transform: scale(0.98);
+}
+.contain_button{
+  width: 100%;
 }

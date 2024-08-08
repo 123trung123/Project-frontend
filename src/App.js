@@ -12,10 +12,12 @@ export default function App() {
   return (
     <div>
         <BrowserRouter>
+        {/* <BreadcrumbsComponent /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products/" element={<ProductPage />} />
             <Route path="/detail/:id" element={<DetailPage />} />
+            <Route path="/product/detail/:id" element={<DetailPage />} />
             <Route path="/cart/" element={<CartPage />} />
             <Route path="/contact/" element={<ContactPage />} />
             <Route path="/payment/" element={<PaymentPage />} />

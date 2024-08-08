@@ -10,7 +10,6 @@ export default function Payment() {
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   useEffect(() => {
     Aos.init({ duration: 1000 });
-    window.scrollTo(0,0)
   }, []);
   return (
     <div className="payment-container">
@@ -34,7 +33,7 @@ export default function Payment() {
                   padding: 2,
                   backgroundColor: "#ffffff",
                   borderRadius: 1,
-                  boxShadow: 2,
+                  boxShadow: 3,
                 }}
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -56,11 +55,13 @@ export default function Payment() {
                           justifyContent: "space-between",
                           width: "100%",
                           mb: 2,
+                          textAlign: "center",
+                          alignItems:"center"
                         }}
-                      >
+                      > <img className="cart-preview" src={item.picture}></img>
                         <Typography variant="body1">{item.name}</Typography>
-                        <Typography variant="body1">Số Lượng: {item.quantity}</Typography>
                         <Typography variant="body1">Giá: {item.price} $</Typography>
+                        <Typography variant="body1">Số Lượng: {item.quantity}</Typography>
                       </Box>
                     ))}
                     <Typography variant="h6" sx={{ mt: 2 }}>
@@ -93,7 +94,7 @@ export default function Payment() {
                   <TextField fullWidth label="Tên" variant="outlined" margin="normal" required />
                   <TextField fullWidth label="Email" variant="outlined" margin="normal" required />
                   <TextField fullWidth label="Địa Chỉ" variant="outlined" margin="normal" required />
-                  <Button sx={{ mt: 2, backgroundColor: "#ff5722" }} type="submit">
+                  <Button className="submit_buy" sx={{ mt: 2, backgroundColor: "#ff0000", color:"white"}} type="submit">
                     Trả Tiền
                   </Button>
                 </form>

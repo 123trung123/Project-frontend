@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./landingpage.css";
 import {
@@ -6,14 +6,9 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import img1 from "../assets/keyboard.png";
+import img1 from "../assets/product1.png";
 import img2 from "../assets/product2.png"
 import img3 from "../assets/product3.png"
-import { useTheme } from "@mui/material/styles";
-import MobileStepper from "@mui/material/MobileStepper";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useDispatch, useSelector } from "react-redux";
 import BestSeller from "../bestsellers/BestSeller";
 import { Row } from "reactstrap";
@@ -44,7 +39,7 @@ export default function LandingPage() {
   ];
   useEffect(() => {
     dispatch(getList());
-    Aos.init({ duration: 1000 });
+    Aos.init();
   }, [dispatch]);
   const sliderSettings = {
     dots: false,
@@ -52,10 +47,9 @@ export default function LandingPage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2500,
+    speed: 1000,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    cssEase: "linear"
   };
   return (
     <div className="lander">
@@ -64,8 +58,7 @@ export default function LandingPage() {
         <Box className="backgroundLanding"
             sx={{
               width: "100%",
-              height: "50%",
-              position: "relative",
+              height: "100%",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -75,31 +68,30 @@ export default function LandingPage() {
               padding: 2,
             }}
           >
-            <Container className="image_container" style={{ }}>
-              <Slider {...sliderSettings}>
+            <Container className="image_container" data-aos="fade-down"data-aos-duration="1500">
+              <Slider  {...sliderSettings}>
                 {images.map((img, index) => (
                   <div key={index}>
                     <img
                       src={img.src}
+                      className="landing_carousel"
                       style={{
-                        width: '60%',height:"auto",
-                   objectFit: 'contain', margin: '0 auto' 
+                        width: '100%',height:"auto", objectFit: 'contain',margin:"0 auto"
                       }}
                     />
                   </div>
                 ))}
               </Slider>
             </Container>
-            <Typography variant="h1" sx={{ color: "#ffffff", mb: 2 }}>
+            <Typography variant="h3" sx={{ color: "#ffffff", mb: 1 }} data-aos="fade-right"data-aos-duration="1500">
               Test
             </Typography>
-            <Typography variant="body1" sx={{ color: "#ffffff", mb: 2 }}>
+            <Typography variant="body2" sx={{ color: "#ffffff", mb: 1 }} data-aos="zoom-out"data-aos-duration="1500">
               Test
             </Typography>
-
             <Link className="appbar"
               to="/products"
-              style={{ color: "inherit", textDecoration: "none" }}
+              style={{ color: "inherit", textDecoration: "none" }}data-aos="zoom-out"data-aos-duration="1500"
             >
               Mua
             </Link>
@@ -107,7 +99,7 @@ export default function LandingPage() {
         </div>
 
         <Container>
-          <Row className="py-5" style={{overflow:"hidden"}}>
+          <Row className="py-5 " style={{overflow:"hidden"}}>
             <BestSeller products={products} />
           </Row>
         </Container>
@@ -115,11 +107,11 @@ export default function LandingPage() {
         <Box sx={{ py: 8 }}>
           <Container>
             <div className="d-flex">
-            <p className="Title"  data-aos="fade-right">
+            <p className="Title"  data-aos="fade-right"data-aos-duration="1500">
               All  
             </p>
             <div style={{ width: '20px' }}></div>
-            <p className="Title"  data-aos="fade-left">
+            <p className="Title"  data-aos="fade-left"data-aos-duration="1500">
               <span className="innerTitle" > Items</span>
             </p>
             </div>

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CarouselProducts from "./CarouselProducts";
-import { Link } from "react-router-dom";
+import { Link, useActionData } from "react-router-dom";
+
 
 const CarouselMain = ({ products }) => {
+
   return (
     <>
       <CarouselProducts products={products} />

@@ -1,20 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Card, CardBody, CardText, CardTitle, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import "./product.css";
-import Aos from "aos";
 import Swal from 'sweetalert2';
 import { Rating, Typography } from "@mui/material";
 
-export default function Product({ products, onAddToCart }) {
+export default function Product({ products }) {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    Aos.init();
-  }, []);
 
   const handleAdd = (product) => {
     Swal.fire({
@@ -27,33 +21,31 @@ export default function Product({ products, onAddToCart }) {
   return (
     <Col
       lg={4}
-      md={4}
+      md={6}
       sm={6}
-      xs={12}
-      className="mb-4"
+      xs={6}
+      className="newfont mb-4"
       data-aos={products.id % 2 === 0 ? "flip-left" : "flip-right"}
       data-aos-duration="1500"
     >
-      <Card className="product-card">
+      <Card className="product-card h-100 d-flex flex-column">
         <div className="product-image-container">
           <img className="product-image" src={products.picture} alt={products.name} />
         </div>
         <CardBody>
-          <CardTitle tag="h5" className="product-title">
-            <Typography variant="h6">{products.name}</Typography>
-            <Typography variant="h5" >${products.price}</Typography>
+          <CardTitle tag="h6" className="product-title">
+            <Typography variant="h7">{products.name}</Typography>
+            <Typography variant="h6">${products.price}</Typography>
           </CardTitle>
           <CardText>
             <Rating name="read-only" value={products.rating} readOnly precision={0.1} />
-            <Typography variant="body2" color="text.secondary" className="product-description">
+            <Typography variant="body2" className="product-description">
               {products.description}
             </Typography>
           </CardText>
-          <div className="d-flex mt-2 justify-content-between">
-            <Link to={`/detail/${products.id}`} className="btn btn-link view-details-button">View Details</Link>
-            <button className="btn btn-link view-details-button" onClick={() => handleAdd(products)} >
-            Add to Cart
-          </button>
+          <div className="contain_button d-flex mt-2 justify-content-between">
+            <Link to={`/product/detail/${products.id}`} className="btn-chi-tiet">Details</Link>
+            <button className="btn-chi-tiet" onClick={() => handleAdd(products)}>Add</button>
           </div>
         </CardBody>
       </Card>

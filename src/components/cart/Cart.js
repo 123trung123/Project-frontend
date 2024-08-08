@@ -16,6 +16,7 @@ import { Divider } from "@mui/material";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Swal from 'sweetalert2'
+import "./cart.css"
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -84,8 +85,9 @@ const updateById = (item,flag)=>{
                   <CardBody>
                     <CardTitle tag="h5">{item.name}</CardTitle>
                     <CardText>Giá: {item.price}$</CardText>
-                    <td ><Button onClick={()=>updateById(item,0)}>-</Button> <span>Số lượng: {item.quantity}</span>
-                    <Button onClick={()=>updateById(item,1)}>+</Button></td> 
+                    <CardText>Chi Tiết: {item.description}</CardText>
+                    <td ><button className="add_button" onClick={()=>updateById(item,0)}>-</button> <span>Số lượng: {item.quantity} </span>
+                    <button className="add_button" onClick={()=>updateById(item,1)}>+</button></td> 
                     <Divider sx={{ my: 2 }} />
                     <Button
                       color="danger"

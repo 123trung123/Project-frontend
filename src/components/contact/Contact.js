@@ -78,7 +78,7 @@ export default function Contact() {
                   />
                   <Button
                     variant="contained"
-                    sx={{ mt: 2, backgroundColor: "#ff5722" }}
+                    sx={{ mt: 2, backgroundColor: "#dd3431" }}
                     type="submit"
                   >
                     Gửi Tin Nhắn

@@ -19,6 +19,7 @@
 }
 .thumbnail:hover {
     scale: 1.2;
+    box-shadow: rgba(50, 50, 93, 0.35) 0px 80px 140px -44px inset, rgba(0, 0, 0, 0.5) 0px 56px 92px -56px inset;
   }
 
 .product-detail {

@@ -2,3 +2,13 @@
   padding: 2rem;
   text-transform: capitalize;
 }
+.cart-preview{
+  width: 100px;
+}
+.submit_buy{
+  transition: 0.3s;
+}
+.submit_buy:hover{
+  background-color:#b60a0a ;
+  scale: 1.024;
+}

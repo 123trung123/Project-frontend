@@ -6,9 +6,8 @@ import { getList } from "../../redux/productsSlice";
 import { addToCart } from "../../redux/cartSlice";
 import { Divider } from "@mui/material";
 import img1 from "../assets/home1-banner-1.png";
-import Filter from "./Filter";
-import "./products.css";
 import Aos from "aos";
+import "./products.css";
 
 export default function Products() {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ export default function Products() {
 
   useEffect(() => {
     dispatch(getList());
-    Aos.init({ duration: 1000 });
+    Aos.init();
   }, [dispatch]);
 
   useEffect(() => {
@@ -28,18 +27,23 @@ export default function Products() {
     dispatch(addToCart(item));
   };
 
-  const handleFilter = ({ name }) => {
+  const handleFilter = ({ name, category }) => {
     const filtered = products.filter((product) => {
-      return name
+      const matchesName = name
         ? product.name.toLowerCase().includes(name.toLowerCase())
         : true;
+      const matchesCategory = category
+        ? product.category.toLowerCase() === category.toLowerCase()
+        : true;
+
+      return matchesName && matchesCategory;
     });
     setFilteredProducts(filtered);
   };
 
   return (
     <Container style={{ overflow: "hidden" }}>
-      <Row className="m-4">
+      <Row>
         <p className="Title" data-aos="zoom-out-down">
           Products<span className="innerTitle"></span>
         </p>
@@ -48,13 +52,13 @@ export default function Products() {
           data-aos="fade-left"
           data-aos-anchor="#example-anchor"
           data-aos-offset="500"
-          data-aos-duration="2500"
+          data-aos-duration="1500"
         >
           <img className="product-card-img" src={img1} alt="test" />
         </div>
         <Divider sx={{ my: 2 }} />
-        <Row>
-          <Col lg={10}>
+        <Row style={{ margin: "0 auto", padding: 0 }}>
+          <Col lg={10} md={10} sm={10} xs={12}>
             <Row>
               {filteredProducts.map((item, index) => (
                 <Product
@@ -65,11 +69,45 @@ export default function Products() {
               ))}
             </Row>
           </Col>
-          <Col lg={2} className="filter-col">
+          <Col lg={2} md={2} sm={2} className="filter-col">
             <Filter onFilter={handleFilter} />
           </Col>
         </Row>
       </Row>
     </Container>
+  );
+}
+
+function Filter({ onFilter }) {
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+    onFilter({ name: e.target.value, category });
+  };
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    onFilter({ name, category: e.target.value });
+  };
+
+  return (
+    <div className="filter-container">
+      <input
+        type="text"
+        placeholder="Filter by name"
+        value={name}
+        onChange={handleNameChange}
+        className="filter-input"
+      />
+      <select value={category} onChange={handleCategoryChange} className="filter-select">
+        <option value="">All Categories</option>
+        <option value="cpus">CPUs</option>
+        <option value="memory">Memory</option>
+        <option value="monitors">Monitors</option>
+        <option value="graphics card">Graphics Cards</option>
+      </select>
+    </div>
   );
 }

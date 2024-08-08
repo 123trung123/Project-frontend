@@ -67,12 +67,22 @@
 }
 .image_container {
   overflow: hidden;
-  width: 800px;
-  height: 300px;
+  width: 35% !important;
+  height: 10% !important;
+  pointer-events: none;
 }
 .backgroundLanding{
   background-image: url(../assets/backgroundLanding.jpeg);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  padding-top: 0;
+}
+.slick-next:before {
+  content: "";
+}.slick-prev:before{
+  content: "";
+}
+.landing_carousel{
+  backdrop-filter:blur(1px);
 }

@@ -4,6 +4,7 @@
   /* width: 400px;
   height: 350px; */
   padding:0 !important;
+  border-radius: 16px;
 }
 .product-card-img {
   background-repeat: no-repeat;

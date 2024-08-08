@@ -49,7 +49,7 @@ export default function BestSeller({ products }) {
             data-aos-duration="1000"
             data-aos-delay={`${1000 - index * 250}`}
           >
-            <Card className="product-card">
+            <Card className="product-card h-100 d-flex flex-column">
               <div className="product-image-container">
                 <img className="product-image" src={item.picture} alt={item.name} />
               </div>
@@ -64,9 +64,11 @@ export default function BestSeller({ products }) {
                     {item.description}
                   </Typography>
                 </CardText>
-                <div className="d-flex justify-content-between mt-2">
+
+              </CardBody>
+              <div className="d-flex justify-content-between mt-2">
                 <Link
-                  className="btn-chi-tiet"
+                  className="btn-chi-tiet px-1"
                   to={`/detail/${item.id}`}
                 >
                   View
@@ -78,7 +80,6 @@ export default function BestSeller({ products }) {
                   Add
                 </button>
               </div>
-              </CardBody>
             </Card>
           </Col>
       ))}
