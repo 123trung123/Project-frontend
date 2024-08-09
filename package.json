@@ -2,7 +2,7 @@
   "name": "buoi_router",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://TrungTran-290.github.io/project",
+  "homepage": "https://TrungTran-290.github.io/Project-frontend/",
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
