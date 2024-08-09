@@ -41,6 +41,19 @@ export default function Products() {
     setFilteredProducts(filtered);
   };
 
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+    handleFilter({ name: e.target.value, category });
+  };
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    handleFilter({ name, category: e.target.value });
+  };
+
   return (
     <Container style={{ overflow: "hidden" }}>
       <Row>
@@ -58,7 +71,7 @@ export default function Products() {
         </div>
         <Divider sx={{ my: 2 }} />
         <Row style={{ margin: "0 auto", padding: 0 }}>
-          <Col lg={10} md={10} sm={10} xs={12}>
+          <Col lg={10} md={10} sm={12} xs={12}>
             <Row>
               {filteredProducts.map((item, index) => (
                 <Product
@@ -69,45 +82,33 @@ export default function Products() {
               ))}
             </Row>
           </Col>
-          <Col lg={2} md={2} sm={2} className="filter-col">
-            <Filter onFilter={handleFilter} />
+          <Col lg={2} md={2} sm={12} xs={12} className="filter-col">
+            <div className="filter-container">
+              <h5>Product Categories</h5>
+              <select
+                value={category}
+                onChange={handleCategoryChange}
+                className="filter-select"
+              >
+                <option value="">All</option>
+                <option value="CPUs">CPUs</option>
+                <option value="Graphics Cards">Graphics Cards</option>
+                <option value="Memory">Memory</option>
+                <option value="Monitors">Monitors</option>
+              </select>
+
+              <h5>Filter by Price</h5>
+              <input
+                type="text"
+                placeholder="Filter by name"
+                value={name}
+                onChange={handleNameChange}
+                className="filter-input"
+              />
+            </div>
           </Col>
         </Row>
       </Row>
     </Container>
-  );
-}
-
-function Filter({ onFilter }) {
-  const [name, setName] = useState("");
-  const [category, setCategory] = useState("");
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-    onFilter({ name: e.target.value, category });
-  };
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-    onFilter({ name, category: e.target.value });
-  };
-
-  return (
-    <div className="filter-container">
-      <input
-        type="text"
-        placeholder="Filter by name"
-        value={name}
-        onChange={handleNameChange}
-        className="filter-input"
-      />
-      <select value={category} onChange={handleCategoryChange} className="filter-select">
-        <option value="">All Categories</option>
-        <option value="cpus">CPUs</option>
-        <option value="memory">Memory</option>
-        <option value="monitors">Monitors</option>
-        <option value="graphics card">Graphics Cards</option>
-      </select>
-    </div>
   );
 }

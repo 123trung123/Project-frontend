@@ -1,4 +1,4 @@
-import { Container, Box, Grid, Typography } from '@mui/material';
+import { Container, Box, Grid } from '@mui/material';
 import React from 'react'
 import FeatureCard from './FeatureCard';
 import "./feature.css"

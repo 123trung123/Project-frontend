@@ -9,6 +9,6 @@
   transition: 0.3s;
 }
 .submit_buy:hover{
-  background-color:#b60a0a ;
+  background-color:#b60a0a !important;
   scale: 1.024;
 }

@@ -12,16 +12,18 @@ import {
   Link,
   Divider,
 } from "@mui/material";
-// import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import logo from "../assets/l.png";
 import { useSelector } from "react-redux";
 import "./header.css";
+import "./extrastyle.css"
 import BreadcrumbsComponent from "../BreadCrumbs";
+import { useNavigate  } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,7 +47,9 @@ export default function Header() {
   };
 
   const handleSearchSubmit = () => {
-    console.log(searchQuery);
+    if (searchQuery.trim()) {
+      navigate(`/${encodeURIComponent(searchQuery)}`);
+    }
     setSearchQuery("");
   };
 
@@ -54,12 +58,7 @@ export default function Header() {
       top: 0,
       behavior: "smooth",
     });
-  };
-
-  const togglePhoneNumber = () => {
-    setShowPhoneNumber(!showPhoneNumber);
-  };
-
+  }
   return (
     <>
       <AppBar
@@ -74,7 +73,7 @@ export default function Header() {
             aria-label="menu"
             onClick={toggleDrawer}
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
           <Typography variant="h6" sx={{ flexGrow: 1, color: "black" }}>
             <Link href="/" style={{ textDecoration: "none", color: "#1E3A8A" }}>
@@ -110,7 +109,7 @@ export default function Header() {
               <SearchIcon />
             </IconButton>
           </div>
-          <IconButton color="inherit" sx={{ padding: 0 }}>
+          <IconButton className="cartstyle"color="inherit" sx={{ padding: 0 }}>
             <Badge badgeContent={cart.length} color="error">
               <Link
                 href="/cart"
@@ -126,7 +125,6 @@ export default function Header() {
             </Badge>
           </IconButton>
         </Toolbar>
-
         <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
           <div
             className="Menubar"
@@ -135,7 +133,7 @@ export default function Header() {
             <Typography
               variant="h6"
               sx={{
-                padding: "24px",
+                padding: "46px",
                 backgroundColor: "#F3F4F6",
                 color: "black",
               }}
@@ -143,39 +141,37 @@ export default function Header() {
             >
               Menu Bar
             </Typography>
-            <Button onClick={toggleDrawer} style={{ margin: "20px 8px" }}>
-              Đóng
-            </Button>
+
             <Divider />{" "}
             <MuiMenuItem>
-              <Link href="/" style={{ textDecoration: "none" }}>
+              <Link href="/" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Trang Chủ
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
-              <Link href="/products" style={{ textDecoration: "none" }}>
+              <Link href="/products" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Sản Phẩm
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
               <Link
-                href="/cart"
-                style={{ textDecoration: "none", color: "black" }}
+                href="/cart" sx={{my:1}}
+                style={{ textDecoration: "none"}}
               >
                 Giỏ Hàng
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
-              <Link href="/payment" style={{ textDecoration: "none" }}>
+              <Link href="/payment" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Thanh Toán
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
-              <Link href="/contact" style={{ textDecoration: "none" }}>
+              <Link href="/contact" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Liên Hệ
               </Link>
             </MuiMenuItem>
-            <Divider />
+            <Divider className="m-0"/>
           </div>
         </Drawer>
         <button className="totop" onClick={scrollToTop}>

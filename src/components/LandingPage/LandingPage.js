@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./landingpage.css";
 import {
   Box,
   Container,
-  Typography,
+  Typography,Link
 } from "@mui/material";
 import img1 from "../assets/product1.png";
 import img2 from "../assets/product2.png"
@@ -37,6 +37,9 @@ export default function LandingPage() {
       src: img3,
     },
   ];
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, []);
   useEffect(() => {
     dispatch(getList());
     Aos.init();
@@ -75,6 +78,7 @@ export default function LandingPage() {
                     <img
                       src={img.src}
                       className="landing_carousel"
+                      alt="test"
                       style={{
                         width: '100%',height:"auto", objectFit: 'contain',margin:"0 auto"
                       }}
@@ -90,7 +94,7 @@ export default function LandingPage() {
               Test
             </Typography>
             <Link className="appbar"
-              to="/products"
+              href="/products"
               style={{ color: "inherit", textDecoration: "none" }}data-aos="zoom-out"data-aos-duration="1500"
             >
               Mua

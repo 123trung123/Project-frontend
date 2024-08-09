@@ -39,8 +39,8 @@ export default function CarouselProducts({ products }) {
               </CardText>
               <div className="image-container"></div>
             </CardBody>
-            <img className="image_carousel" src={item.picture}></img>
-            <Link className=" btn-chi-tiet" to={`/detail/${item.id}`}>
+            <img className="image_carousel" src={item.picture} alt="test"></img>
+            <Link className="btn-chi-tiet2" to={`/detail/${item.id}`}>
               Chi tiết
             </Link>
           </Card>

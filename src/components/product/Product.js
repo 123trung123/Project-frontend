@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, CardBody, CardText, CardTitle, Col } from "reactstrap";
+import { Card, CardBody, CardText, CardTitle, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
@@ -30,7 +30,7 @@ export default function Product({ products }) {
     >
       <Card className="product-card h-100 d-flex flex-column">
         <div className="product-image-container">
-          <img className="product-image" src={products.picture} alt={products.name} />
+          <Link to={`/products/detail/${products.id}`}><img className="product-image" src={products.picture} alt={products.name} /></Link>
         </div>
         <CardBody>
           <CardTitle tag="h6" className="product-title">
@@ -44,7 +44,7 @@ export default function Product({ products }) {
             </Typography>
           </CardText>
           <div className="contain_button d-flex mt-2 justify-content-between">
-            <Link to={`/product/detail/${products.id}`} className="btn-chi-tiet">Details</Link>
+            <Link to={`/products/detail/${products.id}`} className="btn-chi-tiet">Details</Link>
             <button className="btn-chi-tiet" onClick={() => handleAdd(products)}>Add</button>
           </div>
         </CardBody>

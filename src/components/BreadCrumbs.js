@@ -1,54 +1,35 @@
 import React from 'react';
-import { Breadcrumbs, Link, Typography } from '@mui/material';
-import { useLocation, Link as RouterLink } from 'react-router-dom';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { Link } from 'react-router-dom';
 
-const BreadcrumbsComponent = () => {
-  const location = useLocation();
-  const pathnames = location.pathname.split('/').filter(x => x);
+const Breadcrumbs = () => {
+  const location = window.location.pathname;
+  const pathnames = location.split('/').filter((x) => x);
 
   return (
-    <Breadcrumbs   style={{padding:10,paddingLeft:40}}
-      separator={<NavigateNextIcon fontSize="small" />}
-    >
-      <Link 
-        color="inherit" 
-        component={RouterLink} 
-        to="/" 
-        sx={{ 
-          textDecoration: 'none',
-          color: '#5a5a5a',
-        }}
-      >
+    <nav style={{ padding: '10px 60px' }}>
+      <Link to="/" style={{ textDecoration: 'none', color: '#5a5a5a' }}>
         Home
       </Link>
       {pathnames.map((value, index) => {
-        const last = index === pathnames.length - 1;
+        const isLast = index === pathnames.length - 1;
         const to = `/${pathnames.slice(0, index + 1).join('/')}`;
-        return last ? (
-          <Typography 
-            key={to} 
-          >
+
+        return isLast ? (
+          <span key={to} style={{ marginLeft: 8, fontWeight: 'bold' }}>
+            {' / '}
             {value.charAt(0).toUpperCase() + value.slice(1)}
-          </Typography>
+          </span>
         ) : (
-          <Link 
-            color="inherit" 
-            component={RouterLink} 
-            to={to} 
-            key={to} 
-            sx={{ 
-              textDecoration: 'none',
-              color: '#5a5a5a', 
-              textTransform: 'capitalize',
-            }}
-          >
-            {value}
-          </Link>
+          <span key={to} style={{ marginLeft: 8 }}>
+            {' / '}
+            <Link to={to} style={{ textDecoration: 'none', color: '#5a5a5a' }}>
+              {value.charAt(0).toUpperCase() + value.slice(1)}
+            </Link>
+          </span>
         );
       })}
-    </Breadcrumbs>
+    </nav>
   );
 };
 
-export default BreadcrumbsComponent;
+export default Breadcrumbs;

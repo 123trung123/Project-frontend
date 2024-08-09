@@ -35,12 +35,12 @@ export default function Detail() {
     <div className="detail-container">
       <Row className="justify-content-center">
         <Col md={4}>
-          <div className="thumbnail-container">
+          <div className="thumbnail-container" data-aos="fade-right" data-aos-duration="1500">
             <img className="thumbnail" src={pro.picture} alt={pro.name} />
           </div>
         </Col>
         <Col md={4}>
-          <div className="product-detail" data-aos="zoom-out-down" data-aos-duration="1500">
+          <div className="product-detail" data-aos="fade-left" data-aos-duration="1500">
             <Typography variant="h4" component="div" className="product-name">
               {pro.name}
             </Typography>
@@ -59,7 +59,7 @@ export default function Detail() {
               <Button onClick={() => handleAdd(pro)}>Add to Cart</Button>
             </CardActions>
           </div>
-          <div className="product-detail" data-aos="zoom-in-down" data-aos-duration="1500">
+          <div className="product-detail" data-aos="fade-up" data-aos-duration="1500">
             <Typography variant="h5" className="product-description">
               Details:
             </Typography>

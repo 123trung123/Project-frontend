@@ -77,6 +77,7 @@ export default function Contact() {
                     required
                   />
                   <Button
+                  className="submit_buy"
                     variant="contained"
                     sx={{ mt: 2, backgroundColor: "#dd3431" }}
                     type="submit"

@@ -16,3 +16,29 @@
     transition-duration: 0.3s;
     background-color: rgb(255, 160, 160);
  }
+ .payment-container {
+    padding: 2rem;
+    text-transform: capitalize;
+  }
+  .cart-preview{
+    width: 100px;
+  }
+  .submit_buy{
+    transition: 0.3s;
+  }
+  .submit_buy:hover{
+    background-color:#fceaea !important;
+    scale: 1.024;
+  }
+  .divborder{
+    overflow: hidden;
+  }
+  .delete_button{
+    padding: 10px 20px;
+    border-radius:4px ;
+    color:white ;
+    background-color: rgb(255, 42, 42);
+  }
+  .delete_button:hover{
+    background-color: rgb(153, 2, 2);
+  }

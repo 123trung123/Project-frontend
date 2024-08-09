@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CarouselProducts from "./CarouselProducts";
-import { Link, useActionData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const CarouselMain = ({ products }) => {

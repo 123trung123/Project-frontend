@@ -58,7 +58,7 @@ export default function Payment() {
                           textAlign: "center",
                           alignItems:"center"
                         }}
-                      > <img className="cart-preview" src={item.picture}></img>
+                      > <img className="cart-preview" src={item.picture} alt="test"></img>
                         <Typography variant="body1">{item.name}</Typography>
                         <Typography variant="body1">Giá: {item.price} $</Typography>
                         <Typography variant="body1">Số Lượng: {item.quantity}</Typography>

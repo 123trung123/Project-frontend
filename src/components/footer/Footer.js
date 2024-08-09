@@ -60,9 +60,9 @@ export default function Footer() {
         <Typography
           variant="body2"
           sx={{ py: 1 }}
-          style={{ background: "#adb5bd" }}
+          style={{ background: "transparent" }}
         >
-          © Trung
+          © 2024 Trung. All rights reserved. - TechTrends
         </Typography>
       </Box>
     </Box>

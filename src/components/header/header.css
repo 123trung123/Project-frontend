@@ -55,8 +55,9 @@
 }
 .cc-calto-action-ripple {
   position: fixed !important;
-  bottom: 0% !important;
-  left: 1% !important;
+  bottom: 1% !important;
+  left: 1% !important; 
+  margin:0!important;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -92,4 +93,10 @@
 }
 .Menubar li a{
   color: black;
+}
+.cartstyle{
+  transition: 0.3s ease !important;
+}
+.cartstyle:hover{
+  transform: translateY(-5px);
 }

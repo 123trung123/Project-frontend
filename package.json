@@ -2,6 +2,7 @@
   "name": "buoi_router",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://TrungTran-290.github.io/project",
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
@@ -14,9 +15,11 @@
     "aos": "^2.3.4",
     "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
+    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
+    "react-router-bootstrap": "^0.26.3",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
@@ -28,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
