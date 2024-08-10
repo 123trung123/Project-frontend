@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Project-frontend/static/css/main.d88074b7.css",
+    "main.js": "/Project-frontend/static/js/main.05e5c0e8.js",
+    "static/media/product2.png": "/Project-frontend/static/media/product2.b6f6a938f23f0ee2de0e.png",
+    "static/media/backgroundLanding.jpeg": "/Project-frontend/static/media/backgroundLanding.aa7dfa2c135a921227cc.jpeg",
+    "static/media/home1-sale.png": "/Project-frontend/static/media/home1-sale.a06cf004029ed21183a2.png",
+    "static/media/product3.png": "/Project-frontend/static/media/product3.2d6f82323411005cd713.png",
+    "static/media/home1-banner-2.png": "/Project-frontend/static/media/home1-banner-2.7f60661d983bbe96df2f.png",
+    "static/media/product1.png": "/Project-frontend/static/media/product1.c96899bcbc8edf16fba7.png",
+    "static/media/home1-banner-1.png": "/Project-frontend/static/media/home1-banner-1.92d4181284e706e0c6a1.png",
+    "static/media/Keyboard1.png": "/Project-frontend/static/media/Keyboard1.8c66bc206c3efe2e77c1.png",
+    "static/media/l.png": "/Project-frontend/static/media/l.ab8a6b2c611606857ea9.png",
+    "static/media/iconma.png": "/Project-frontend/static/media/iconma.6cc3e2ed31d247986a30.png",
+    "static/media/iconfe.png": "/Project-frontend/static/media/iconfe.e3d423551974f07ab9f7.png",
+    "index.html": "/Project-frontend/index.html",
+    "main.d88074b7.css.map": "/Project-frontend/static/css/main.d88074b7.css.map",
+    "main.05e5c0e8.js.map": "/Project-frontend/static/js/main.05e5c0e8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d88074b7.css",
+    "static/js/main.05e5c0e8.js"
+  ]
+}
