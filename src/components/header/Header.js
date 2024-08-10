@@ -9,7 +9,6 @@ import {
   Drawer,
   InputBase,
   MenuItem as MuiMenuItem,
-  Link,
   Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -21,6 +20,7 @@ import "./header.css";
 import "./extrastyle.css"
 import BreadcrumbsComponent from "../BreadCrumbs";
 import { useNavigate  } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ export default function Header() {
             <MenuIcon/>
           </IconButton>
           <Typography variant="h6" sx={{ flexGrow: 1, color: "black" }}>
-            <Link href="/" style={{ textDecoration: "none", color: "#1E3A8A" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "#1E3A8A" }}>
               <img src={logo} alt="Logo" width="200" height="50" />
             </Link>
           </Typography>
@@ -112,7 +112,7 @@ export default function Header() {
           <IconButton className="cartstyle"color="inherit" sx={{ padding: 0 }}>
             <Badge badgeContent={cart.length} color="error">
               <Link
-                href="/cart"
+                to="/cart"
                 style={{
                   color: "inherit",
                   textDecoration: "none",
@@ -144,30 +144,30 @@ export default function Header() {
 
             <Divider />{" "}
             <MuiMenuItem>
-              <Link href="/" sx={{my:1}} style={{ textDecoration: "none" }}>
+              <Link to="/" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Trang Chủ
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
-              <Link href="/products" sx={{my:1}} style={{ textDecoration: "none" }}>
+              <Link to="/products" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Sản Phẩm
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
               <Link
-                href="/cart" sx={{my:1}}
+                to="/cart" sx={{my:1}}
                 style={{ textDecoration: "none"}}
               >
                 Giỏ Hàng
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
-              <Link href="/payment" sx={{my:1}} style={{ textDecoration: "none" }}>
+              <Link to="/payment" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Thanh Toán
               </Link>
             </MuiMenuItem>
             <MuiMenuItem>
-              <Link href="/contact" sx={{my:1}} style={{ textDecoration: "none" }}>
+              <Link to="/contact" sx={{my:1}} style={{ textDecoration: "none" }}>
                 Liên Hệ
               </Link>
             </MuiMenuItem>
@@ -180,7 +180,7 @@ export default function Header() {
           </svg>
         </button>
         <section className="call-button">
-          <p className="cc-calto-action-ripple" href="">
+          <p className="cc-calto-action-ripple" to="">
             <i>
               <svg
                 stroke="currentColor"

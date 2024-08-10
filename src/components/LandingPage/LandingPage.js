@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./landingpage.css";
 import {
   Box,
   Container,
-  Typography,Link
+  Typography
 } from "@mui/material";
 import img1 from "../assets/product1.png";
 import img2 from "../assets/product2.png"
@@ -94,7 +94,7 @@ export default function LandingPage() {
               Test
             </Typography>
             <Link className="appbar"
-              href="/products"
+              to="/products"
               style={{ color: "inherit", textDecoration: "none" }}data-aos="zoom-out"data-aos-duration="1500"
             >
               Mua

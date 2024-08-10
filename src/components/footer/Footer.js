@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Grid, Typography, Link, Box, Divider } from "@mui/material";
+import { Container, Grid, Typography, Box, Divider } from "@mui/material";
 import logo from "../assets/l.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -21,27 +22,27 @@ export default function Footer() {
               Liên Kết Hữu Ích
             </Typography>
             <Typography variant="body2">
-              <Link href="/" color="inherit" underline="none">
+              <Link to="/" color="inherit" underline="none">
                 Trang Chủ
               </Link>
             </Typography>
             <Typography variant="body2">
-              <Link href="/products" color="inherit" underline="none">
+              <Link to="/products" color="inherit" underline="none">
                 Sản Phẩm
               </Link>
             </Typography>
             <Typography variant="body2">
-              <Link href="/cart" color="inherit" underline="none">
+              <Link to="/cart" color="inherit" underline="none">
                 Giỏ Hàng
               </Link>
             </Typography>
             <Typography variant="body2">
-              <Link href="/payment" color="inherit" underline="none">
+              <Link to="/payment" color="inherit" underline="none">
                   Thanh Toán
               </Link>
             </Typography>
             <Typography variant="body2">
-              <Link href="/contact" color="inherit" underline="none">
+              <Link to="/contact" color="inherit" underline="none">
                 Liên Hệ
               </Link>
             </Typography>
