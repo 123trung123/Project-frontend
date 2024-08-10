@@ -2,7 +2,7 @@
   "name": "buoi_router",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://123trung123.github.io/Project-frontend/",
+  "homepage": "https://123trung123.github.io/Project-frontend",
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
