@@ -9,7 +9,6 @@
   background-size: auto;
   width: 100%;
   height: auto;
-  margin: 0 auto;
 }
 .filter-col {
   padding: 0 !important;
@@ -17,17 +16,8 @@
 .filter-container {
   box-sizing: border-box;
 }
-.filter-container {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-}
-.filter-select,
-.filter-input {
+.filter-input,
+.filter-select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  box-sizing: border-box;
 }
-

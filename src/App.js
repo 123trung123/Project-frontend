@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import "./style.css";
 import ProductPage from "./pages/productpage/ProductPage";
@@ -12,7 +12,7 @@ import SearchResults from "./components/SearchResult";
 export default function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         {/* <BreadcrumbsComponent /> */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           {/* <Route path="/payment" element={<PaymentPage />} /> */}
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

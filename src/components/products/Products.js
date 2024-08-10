@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "../product/Product";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col} from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getList } from "../../redux/productsSlice";
 import { addToCart } from "../../redux/cartSlice";
@@ -40,7 +40,6 @@ export default function Products() {
     });
     setFilteredProducts(filtered);
   };
-
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
 
@@ -53,7 +52,6 @@ export default function Products() {
     setCategory(e.target.value);
     handleFilter({ name, category: e.target.value });
   };
-
   return (
     <Container style={{ overflow: "hidden" }}>
       <Row>
@@ -71,7 +69,7 @@ export default function Products() {
         </div>
         <Divider sx={{ my: 2 }} />
         <Row style={{ margin: "0 auto", padding: 0 }}>
-          <Col lg={10} md={10} sm={12} xs={12}>
+          <Col lg={10} md={10} sm={10} xs={12}>
             <Row>
               {filteredProducts.map((item, index) => (
                 <Product
@@ -82,22 +80,8 @@ export default function Products() {
               ))}
             </Row>
           </Col>
-          <Col lg={2} md={2} sm={12} xs={12} className="filter-col">
+          <Col lg={2} md={2} sm={2} className="filter-col">
             <div className="filter-container">
-              <h5>Product Categories</h5>
-              <select
-                value={category}
-                onChange={handleCategoryChange}
-                className="filter-select"
-              >
-                <option value="">All</option>
-                <option value="CPUs">CPUs</option>
-                <option value="Graphics Cards">Graphics Cards</option>
-                <option value="Memory">Memory</option>
-                <option value="Monitors">Monitors</option>
-              </select>
-
-              <h5>Filter by Price</h5>
               <input
                 type="text"
                 placeholder="Filter by name"
@@ -105,6 +89,17 @@ export default function Products() {
                 onChange={handleNameChange}
                 className="filter-input"
               />
+              <select
+                value={category}
+                onChange={handleCategoryChange}
+                className="filter-select"
+              >
+                 <option value="">All</option>
+                 <option value="CPUs">CPUs</option>
+                 <option value="Graphics Cards">Graphics Cards</option>
+                 <option value="Memory">Memory</option>
+                 <option value="Monitors">Monitors</option>
+              </select>
             </div>
           </Col>
         </Row>
