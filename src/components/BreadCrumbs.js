@@ -7,11 +7,10 @@ import { useSelector } from 'react-redux';
 const BreadcrumbsComponent = () => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter(x => x);
-
-  // Retrieve products from Redux store
   const products = useSelector(state => state.products.products || []);
-  const lastPathname = pathnames[pathnames.length - 1];
-  const product = products.find(p => p.id === lastPathname);
+  const isDetailPage = pathnames.includes('detail');
+  const productID = pathnames[pathnames.length - 1];
+  const product = products.find(p => p.id === productID);
   const productName = product ? product.name : '';
 
   return (
@@ -24,10 +23,12 @@ const BreadcrumbsComponent = () => {
         Home
       </Link>
       {pathnames.map((value, index) => {
+        if (value === 'detail') return null;
+
         const last = index === pathnames.length - 1;
         const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 
-        return last ? (
+        return last && isDetailPage ? (
           <Typography key={to} style={{ fontWeight: 'bold' }}>
             {productName || value.charAt(0).toUpperCase() + value.slice(1)}
           </Typography>
