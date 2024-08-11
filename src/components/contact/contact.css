@@ -1,5 +1,6 @@
 .contact-container {
   padding: 2rem;
+  overflow: hidden;
 }
 .contact-info-title {
   margin-top: 2rem;

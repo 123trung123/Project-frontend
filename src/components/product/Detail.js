@@ -7,22 +7,25 @@ import { getList } from "../../redux/productsSlice";
 import "./detail.css";
 import { addToCart } from "../../redux/cartSlice";
 import Aos from "aos";
+import Swal from 'sweetalert2';
 
 export default function Detail() {
   const { id } = useParams();
   const { products } = useSelector((state) => state.products);
   const pro = products.find((item) => item.id === id);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getList());
     Aos.init();
+    window.scrollTo(0,0)
   }, [dispatch]);
-
   const handleAdd = (product) => {
+    Swal.fire({
+      text: "Item has been added!",
+      icon: "success"
+    });
     dispatch(addToCart(product));
   };
-
   if (!pro) {
     return (
       <Typography variant="h6" color="text.secondary">
@@ -54,7 +57,6 @@ export default function Detail() {
             <Typography variant="body2" color="text.secondary" className="product-category">
               Category: {pro.category}
             </Typography>
-
             <CardActions>
               <Button onClick={() => handleAdd(pro)}>Add to Cart</Button>
             </CardActions>

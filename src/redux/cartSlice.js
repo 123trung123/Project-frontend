@@ -25,7 +25,6 @@ const cartSlice = createSlice({
     },
     updateCartItem(state, action) {
       const { id, flag } = action.payload;
-      console.log(id, flag)
       const existingItem = state.cart.find((item) => item.id === id);
       if (existingItem) {
         if (flag === 0 && existingItem.quantity > 1) {
@@ -36,8 +35,12 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
+    setCartNull(state, action) {
+      state.cart=action.payload
+      localStorage.setItem("cart", JSON.stringify(state.cart));
+    },
   },
 });
 
-export const { addToCart, deleteFromCart, updateCartItem } = cartSlice.actions;
+export const { addToCart, deleteFromCart, updateCartItem ,setCartNull} = cartSlice.actions;
 export default cartSlice.reducer;

@@ -100,3 +100,6 @@
 .cartstyle:hover{
   transform: translateY(-5px);
 }
+.containMenu{
+  overflow: hidden;
+}

@@ -50,7 +50,11 @@ export default function BestSeller({ products }) {
           >
             <Card className="product-card h-100 d-flex flex-column">
               <div className="product-image-container">
-                <img className="product-image" src={item.picture} alt={item.name} />
+                	<Link
+                  to={`/detail/${item.id}`}
+                  >
+                  <img className="product-image" src={item.picture} alt={item.name} />
+                </Link>
               </div>
               <CardBody>
                 <CardTitle tag="h5" className="product-title">
