@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./sale.css";
-import {Box,Container,Grid,Typography} from "@mui/material";
-import img1 from "../assets/Keyboard1.png"
+import { Box, Container, Grid, Typography } from "@mui/material";
+import img1 from "../assets/Keyboard1.png";
 
 export default function Sale() {
   useEffect(() => {
@@ -15,15 +15,15 @@ export default function Sale() {
       <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }} data-aos="fade-up">
         <p className="Title1">Sa<span className="innerTitle">le</span></p>
       </Typography>
-      <Box sx={{ py: 5 }}>
-        <Container>
+      <div style={{ padding: 25 }}>
+        <Container sx={{overflow: "hidden"}}>
           <Grid container spacing={4}>
-            <Grid item xs={12} md={5} data-aos="fade-right" style={{margin:"auto 0"}}>
+            <Grid item xs={12} md={5} data-aos="fade-right" sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <Typography variant="h5" className="special-price-title">
                 Giá đặc biệt
               </Typography>
               <Typography variant="h2" className="discount">
-              Giảm tới 50%
+                Giảm tới 50%
               </Typography>
               <Typography variant="body1" className="tagline">
                 Tin tưởng bởi nhiều người.
@@ -46,12 +46,18 @@ export default function Sale() {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={12} md={7} className="pictureholder">
-              <img data-aos="fade-left" src={img1} className="responsive-image" alt="Sale" />
+            <Grid item xs={12} md={7} sx={{ display: "flex", justifyContent: "center", alignItems: "center",  }}>
+              <img
+                data-aos="fade-left"
+                src={img1}
+                className="responsive-image"
+                alt="Sale"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </div>
     </div>
   );
 }
